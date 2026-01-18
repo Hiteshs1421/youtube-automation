@@ -3,10 +3,12 @@ import requests
 import json
 import time
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-if not OPENAI_API_KEY:
-    raise RuntimeError("OPENAI_API_KEY is missing")
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+import os
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+if not GEMINI_API_KEY:
+    raise RuntimeError("GEMINI_API_KEY is missing")
 
 SORA_API_KEY = os.getenv("SORA_API_KEY")
 if not SORA_API_KEY:
