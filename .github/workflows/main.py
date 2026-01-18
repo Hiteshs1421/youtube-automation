@@ -4,9 +4,13 @@ import json
 import time
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if not OPENAI_API_KEY:
+    raise RuntimeError("OPENAI_API_KEY is missing")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 
 SORA_API_KEY = os.getenv("SORA_API_KEY")
+if not SORA_API_KEY:
+    raise RuntimeError("SORA_API_KEY is missing")
 SORA_MODEL = os.getenv("SORA_MODEL")
 
 SHORTS_DURATION = int(os.getenv("SHORTS_DURATION", "11"))
